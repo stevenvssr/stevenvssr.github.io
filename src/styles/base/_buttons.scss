@@ -1,0 +1,72 @@
+// src/styles/base/_buttons.scss
+@use "../abstracts/variables" as vars;
+@use "sass:color";
+
+// --- Custom Button Class Styling (.button) ---
+.button {
+  // Use the Accent Color as the primary background
+  background: vars.$accent-color;
+  color: vars.$dark-bg; // Ensure text is dark for high contrast
+
+  padding: 0.75rem 1.5rem; // Increase padding for a more substantial button
+  border-radius: 8px; // Softer corners
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease; // Add transition for smooth hover effects
+
+  &:hover {
+    // Subtle darkening on hover for feedback
+    background: color.adjust(vars.$accent-color, $lightness: -10%);
+    box-shadow: 0 5px 15px rgba(vars.$accent-color, 0.4); // Add a matching glow
+  }
+
+  // If you are using .btn-dark from Bootstrap in your ProjectCard.jsx:
+  &.btn-dark {
+    background-color: vars.$card-bg !important;
+    border: 1px solid vars.$accent-color;
+    color: vars.$light-text !important;
+
+    &:hover {
+      background-color: vars.$accent-color !important;
+      color: vars.$dark-bg !important;
+      box-shadow: 0 5px 15px rgba(vars.$accent-color, 0.4);
+    }
+  }
+}
+
+// --- Bootstrap Primary Button Override (.btn-primary) ---
+.btn-primary {
+  // 🟢 Base Color: Olive Green (Accent)
+  background-color: vars.$accent-color;
+  border-color: vars.$accent-color;
+  color: vars.$dark-bg; /* Dark text for contrast on the green button */
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 8px;
+
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.1s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    // 🟢 FIX: Use color.adjust() instead of deprecated darken()
+    background-color: color.adjust(vars.$accent-color, $lightness: -8%);
+    border-color: color.adjust(vars.$accent-color, $lightness: -8%);
+    color: vars.$dark-bg;
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: 0 4px 10px rgba(vars.$accent-color, 0.4);
+  }
+
+  // Ensure button remains green on being active/focused
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    // 🟢 FIX: Use color.adjust() instead of deprecated darken()
+    background-color: color.adjust(vars.$accent-color, $lightness: -12%);
+    border-color: color.adjust(vars.$accent-color, $lightness: -12%);
+  }
+}

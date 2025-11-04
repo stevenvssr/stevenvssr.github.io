@@ -1,0 +1,215 @@
+// src/styles/base/_cards.scss
+@use "../abstracts/variables" as vars;
+
+/* --- PROJECT CARD STYLING (.card) --- */
+
+.card {
+  background-color: vars.$card-bg;
+  color: vars.$light-text;
+
+  // Softer corners and subtle accent border
+  border: 1px solid rgba(vars.$accent-color, 0.2);
+  border-radius: 12px;
+
+  text-align: center;
+  padding: 0;
+
+  box-shadow: 0 8px 20px vars.$shadow-color;
+  width: 300px;
+  margin-top: 20px;
+
+  // Premium lift and shadow transition
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+
+  /* 🟢 FIX: Use Flexbox to manage internal content alignment */
+  display: flex;
+  flex-direction: column; /* Stack image, body, and button vertically */
+  justify-content: space-between; /* Pushes the last item (buttons) to the bottom */
+
+  &:hover {
+    transform: translateY(-8px); // Lift significantly
+    box-shadow: 0 15px 35px rgba(vars.$accent-color, 0.35); // Accent glow
+    border-color: vars.$accent-color; // Highlight border
+  }
+}
+
+.card img {
+  width: 100%;
+  height: 200px; // Consistent height for all project images
+  object-fit: cover; // Ensures images look good
+  margin-bottom: 0;
+  border: none;
+  // Subtle visual divider below the image
+  border-bottom: 1px solid rgba(vars.$light-text, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+  color: vars.$light-text;
+  background-color: transparent;
+
+  /* 🟢 FIX 1: Enforce a minimum height for the text area */
+  min-height: 150px;
+
+  /* 🟢 FIX 2: Allows the card body to take up available space and handle vertical alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(vars.$light-text, 0.2);
+  padding: 0 0 10px 0;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* 🟢 NEW: Dedicated container for the buttons to ensure bottom alignment */
+.card-actions {
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- LANGUAGE CARD (.card-category) STYLING --- */
+
+.card-category {
+  height: 180px;
+  width: 180px;
+
+  background-color: vars.$card-bg;
+  border: 1px solid rgba(vars.$accent-color, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: vars.$light-text;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px vars.$shadow-color;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  margin: 15px;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: vars.$accent-color;
+    box-shadow: 0 0 25px rgba(vars.$accent-color, 0.3);
+  }
+}
+
+/* Styling for both images (fallback) and icons */
+.card-category img {
+  height: 70px;
+  width: auto;
+  max-width: 80%;
+  margin: 0;
+  padding-bottom: 5px;
+  object-fit: contain;
+}
+
+/* FIX: Specific icon styling to ensure visibility and sizing */
+.card-category i {
+  font-size: 70px !important;
+  color: vars.$accent-color !important;
+  display: block !important;
+  visibility: visible !important;
+
+  margin-bottom: 10px;
+  margin-top: 10px;
+  height: auto;
+  width: auto;
+}
+
+/* --- SKILL CARD STYLING (.skillcard) --- */
+
+.skillcard {
+  background: vars.$card-bg;
+  color: vars.$light-text;
+  margin: 15px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 12px;
+  border: 1px solid rgba(vars.$accent-color, 0.1);
+  box-shadow: 0 5px 15px vars.$shadow-color;
+
+  transition: all 0.3s ease;
+}
+
+.skillcard:hover {
+  transform: scale(1.05);
+  border-color: vars.$accent-color;
+  box-shadow: 0 8px 20px rgba(vars.$accent-color, 0.3);
+}
+
+.skillcard h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.skillcard i {
+  color: vars.$accent-color;
+  font-size: 60px;
+  transition: transform 0.3s ease;
+}
+.skillcard:hover i {
+  transform: rotate(5deg);
+}
+
+.skillcard img {
+  height: 50px;
+  width: 50px;
+  margin: 0;
+}
+
+.skillflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+/* --- OBSOLETE AND MEDIA QUERIES --- */
+
+.cards,
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 16px;
+  background-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+  // Apply near full width to all major card types on phones
+  .card,
+  .card-category,
+  .skillcard {
+    width: 90%;
+    max-width: 350px;
+    margin: 15px auto;
+  }
+
+  // Ensure skill items stack nicely
+  .skillflex {
+    flex-direction: column;
+    align-items: center;
+  }
+}

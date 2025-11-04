@@ -1,0 +1,42 @@
+// src/styles/base/_footer.scss
+@use "../abstracts/variables" as vars;
+
+.footer {
+  // Use a slightly lighter card background for subtle contrast against the dark body
+  background-color: vars.$card-bg;
+  color: vars.$light-text;
+  padding: 3rem 0;
+  text-align: center;
+  border-top: 2px solid rgba(vars.$accent-color, 0.4); /* Subtle Olive Green line */
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.social-links {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  // Base color for icons: Light text color
+  color: vars.$light-text;
+  font-size: 1.8rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.social-links a:hover {
+  // 🟢 PREMIUM EFFECT: Icons change to Olive Green on hover, with a lift
+  color: vars.$accent-color;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}

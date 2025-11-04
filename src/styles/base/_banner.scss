@@ -1,0 +1,77 @@
+// src/styles/base/_banner.scss
+@use "../abstracts/variables" as vars;
+
+.banner {
+  /* 🟢 JAPANDI VIBE: Use the light main background color */
+  background-color: vars.$dark-bg;
+
+  text-align: center;
+
+  /* Generous vertical padding to give content space to breathe */
+  padding: 8rem 0 6rem;
+  min-height: 85vh; /* Ensure it takes up most of the screen */
+}
+
+.banner .avatar {
+  width: 150px; /* Reduced for a cleaner, more minimalist look */
+  height: 150px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+
+  // 🟢 Japandi Frame: Thin, dark border with soft shadow
+  border: 3px solid vars.$light-text; /* Dark Charcoal border */
+  box-shadow: 0 5px 20px rgba(vars.$shadow-color, 0.4);
+  object-fit: cover;
+}
+
+.banner h1 {
+  /* Main heading should be bold and dark */
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  /* 🟢 FIX: Ensure heading text is Dark Charcoal for contrast */
+  color: vars.$light-text;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  /* Muted body text color */
+  color: vars.$dark-text;
+  margin-bottom: 3rem; /* Increased margin for button separation */
+}
+
+/* Base span/inline text styles */
+.banner span {
+  font-weight: 600;
+  color: vars.$accent-color; /* Muted Sage Green */
+}
+
+.banner .disappear {
+  display: inline-block;
+  margin-top: 0.5rem; /* Reduced top margin to keep it closer to the main heading */
+
+  /* 🟢 POP: Highlight the main descriptor with Sage Green */
+  color: vars.$accent-color;
+  font-weight: 700;
+  font-size: 2rem; /* Larger and more impactful than 1.8rem */
+}
+
+@media (max-width: 767px) {
+  .banner {
+    min-height: auto; /* Allow height to collapse on mobile */
+    padding: 6rem 1rem 3rem;
+  }
+  .banner h1 {
+    font-size: 2.2rem;
+  }
+  .banner p {
+    font-size: 1.2rem;
+  }
+  .banner .disappear {
+    font-size: 1.6rem;
+  }
+}

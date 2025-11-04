@@ -1,0 +1,25 @@
+// src/styles/abstracts/_variables.scss
+
+// --- Japandi Color Palette ---
+
+// 1. Primary Background: Soft, Warm White/Beige (Dominant Japandi color)
+$dark-bg: #f8f4ec;
+
+// 2. Card Background: Very Light Cream/Off-White (Natural texture/material)
+$card-bg: #ffffff;
+
+// 3. Light Text (Used on Dark backgrounds): Earthy Contrast (Deep, warm gray/charcoal)
+$light-text: #2f3e46;
+
+// 4. Dark Text (Used on Light backgrounds/Body text): Muted Dark Gray
+$dark-text: #4a5759;
+
+// 5. Accent Color: Muted Sage Green/Warm Olive
+$accent-color: #a3b18a;
+
+// 6. Shadow Color: Very Soft, subtle shadow
+$shadow-color: rgba(47, 62, 70, 0.15);
+
+// --- Typography ---
+$font-family-base: "Inter", sans-serif;
+$font-family-heading: "Montserrat", sans-serif;

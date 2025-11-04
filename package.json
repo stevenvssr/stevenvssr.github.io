@@ -13,8 +13,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "framer-motion": "^12.23.24",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "sass": "^1.93.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

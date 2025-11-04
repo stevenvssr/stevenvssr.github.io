@@ -1,0 +1,81 @@
+// src/styles/base/_contact.scss
+@use "../abstracts/variables" as vars;
+@use "sass:color";
+
+.contact-section {
+  background-color: vars.$accent-color;
+
+  width: 100%;
+  padding: 2.5rem 0 2.5rem;
+
+  // Base text color is DARK Charcoal ($light-text) for elements without specific color
+  color: vars.$light-text;
+  text-align: center;
+
+  border-top: 3px solid color.adjust(vars.$accent-color, $lightness: -10%);
+}
+
+.contact-heading {
+  /* 🟢 CRITICAL FIX: Set the heading color to the LIGHT Cream color ($dark-text) */
+  color: vars.$dark-text !important;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  padding: 0.5rem 0;
+}
+
+/* --- Contact Text (Email/Phone) Styling --- */
+.contact-info p {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: vars.$light-text; // Dark Charcoal text
+}
+
+.contact-info i {
+  font-size: 1.25rem;
+  margin-right: 15px;
+  color: vars.$light-text; // Dark Charcoal icon
+  vertical-align: middle;
+}
+
+/* 🟢 FIX 3: Link color on green background */
+.contact-info .mail:link,
+.contact-info .mail:visited,
+.contact-info .mail {
+  // Use the DARK Charcoal color for the base link text
+  color: vars.$light-text !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.contact-info .mail:hover,
+.contact-info .mail:focus {
+  // Use the LIGHT Cream color for a distinct hover effect
+  color: vars.$dark-text !important;
+  text-decoration: underline;
+}
+
+/* --- Social Media Icon Container Styling --- */
+.footer-links {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links a {
+  // Use the DARK Charcoal color for base social icons
+  color: vars.$light-text;
+  font-size: 2.2rem;
+  margin: 0 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  // Use the LIGHT Cream color for a distinct hover effect
+  color: vars.$dark-text;
+  transform: translateY(-3px) scale(1.1);
+}
