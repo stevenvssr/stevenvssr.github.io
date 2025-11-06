@@ -38,18 +38,18 @@ const projectsData = [
     aos: { effect: "fade-right", duration: "2500" },
   },
   {
-    title: "Mr.Cocktail",
+    title: "Fun with Flags",
     description:
-      "A little app that I've build that will help people find the recipe for their favourite cocktails!",
+      "Inspired by Sheldon Cooper's 'Fun with Flags' series, I created a website that showcases various country flags along with interesting facts about each country.",
     // Use the string path that matches the file in src/assets/
-    imageSrc: "assets/Cocktails.png",
-    projectUrl: "http://lewagoncocktails504.herokuapp.com/",
+    imageSrc: "assets/flags.png",
+    projectUrl: "https://funwithflags504.netlify.app/",
     aos: { effect: "fade-left", duration: "2500" },
   },
   {
     title: "PokeFinder",
-    description: "A website where I used the PokeAPI to find Pokemon.",
-    imageSrc: "assets/pokefinder.png",
+    description: "A simple Pokedex app that shows info about Pokemon.",
+    imageSrc: "assets/PokeFinder.png",
     projectUrl: "https://pokefinder504.netlify.app/",
     aos: { effect: "fade-left", duration: "2500" },
   },
