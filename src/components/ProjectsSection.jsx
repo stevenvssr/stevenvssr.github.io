@@ -49,7 +49,7 @@ const projectsData = [
   {
     title: "PokeFinder",
     description: "A simple Pokedex app that shows info about Pokemon.",
-    imageSrc: "assets/PokeFinder.png",
+    imageSrc: "assets/pokefinder.png",
     projectUrl: "https://pokefinder504.netlify.app/",
     aos: { effect: "fade-left", duration: "2500" },
   },
