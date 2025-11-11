@@ -61,10 +61,10 @@ const projectsData = [
     aos: { effect: "fade-right", duration: "2500" },
   },
   {
-    title: "Message Board",
-    description: "A message board to talk about whatever!",
-    imageSrc: "assets/forum.png",
-    projectUrl: "https://messageboard504.netlify.app/",
+    title: "Weather App",
+    description: "Check the weather in your city!",
+    imageSrc: "assets/weather.png",
+    projectUrl: "https://weather504.netlify.app/",
     aos: { effect: "fade-right", duration: "2500" },
   },
   {
